@@ -1315,6 +1315,15 @@ const todos = [
 // Middleware untuk parsing JSON
 app.use(express.json())
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    return res.status(200).json({});
+  }
+  next();
+});
 // Home route - HTML
 app.get('/', (req, res) => {
   res.type('html').send(`
