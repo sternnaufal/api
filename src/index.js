@@ -1,6 +1,6 @@
 import express from 'express'
-import path from 'path'
 import { fileURLToPath } from 'url'
+import path from 'path'
 import fs from 'fs'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -8,58 +8,13 @@ const __dirname = path.dirname(__filename)
 
 const app = express()
 
+// Path ke todos.json yang ada di folder yang sama dengan index.js
+const todosPath = path.join(__dirname, 'todos.json')
+const todos = JSON.parse(fs.readFileSync(todosPath, 'utf8'))
+
 // Middleware untuk parsing JSON
 app.use(express.json())
 
-// Baca data dari file JSON dengan path yang benar untuk Vercel
-let todos = []
-try {
-  // Coba beberapa kemungkinan path
-  const possiblePaths = [
-    path.join(process.cwd(), 'data', 'todos.json'),
-    path.join(__dirname, 'data', 'todos.json'),
-    path.join(__dirname, '..', 'data', 'todos.json'),
-    '/var/task/data/todos.json' // path khas Vercel
-  ]
-  
-  let fileContent = null
-  for (const filePath of possiblePaths) {
-    try {
-      if (fs.existsSync(filePath)) {
-        fileContent = fs.readFileSync(filePath, 'utf8')
-        console.log(`✅ Found todos.json at: ${filePath}`)
-        break
-      }
-    } catch (e) {
-      // lanjut coba path berikutnya
-    }
-  }
-  
-  if (fileContent) {
-    todos = JSON.parse(fileContent)
-    console.log(`✅ Berhasil memuat ${todos.length} todos`)
-  } else {
-    throw new Error('todos.json tidak ditemukan di path manapun')
-  }
-} catch (error) {
-  console.error('❌ Gagal membaca file todos.json:', error.message)
-  // Data fallback
-  todos = [
-    {
-      id: 1,
-      title: "Contoh todo 1",
-      description: "Ini adalah contoh todo",
-      is_complete: false,
-      category: "Pekerjaan",
-      priority: "Sedang",
-      due_date: new Date().toISOString().split('T')[0],
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-      estimated_hours: 2,
-      tags: ["contoh"]
-    }
-  ]
-}
 // Home route - HTML
 app.get('/', (req, res) => {
   res.type('html').send(`
