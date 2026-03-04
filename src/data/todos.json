@@ -1,4 +1,4 @@
-const todos = [
+[
   {
     "id": 1,
     "title": "Menyelesaikan laporan proyek 1",
