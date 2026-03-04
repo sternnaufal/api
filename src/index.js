@@ -139,7 +139,6 @@ const todos = [
     "estimated_hours": 1,
     "tags": ["rutin"]
   },
-  [
   {
     "id": 11,
     "title": "Membuat kopi 11",
