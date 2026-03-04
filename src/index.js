@@ -1319,26 +1319,104 @@ app.use(express.json())
 app.get('/', (req, res) => {
   res.type('html').send(`
     <!doctype html>
-    <html>
-      <head>
-        <meta charset="utf-8"/>
-        <title>Express on Vercel</title>
-        <link rel="stylesheet" href="/style.css" />
-      </head>
-      <body>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/api-data">API Data</a>
-          <a href="/healthz">Health</a>
-          <a href="/todos">Todos API</a>
-        </nav>
-        <h1>Welcome to Express on Vercel 🚀</h1>
-        <p>This is a minimal example without a database or forms.</p>
-        <p>Check out the <a href="/todos">Todos API</a> endpoint!</p>
-        <img src="/logo.png" alt="Logo" width="120" />
-      </body>
-    </html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Naufal Rakha Putra • Todos API</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* Tambahan styling biar lebih personal */
+      .name-highlight {
+        color: #667eea;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .badge {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        display: inline-block;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/api-data">API Data</a>
+      <a href="/healthz">Health</a>
+      <a href="/todos">Todos API</a>
+      <a href="https://github.com/naufalrakha" target="_blank">GitHub</a>
+    </nav>
+    
+    <div style="text-align: center; padding: 20px;">
+      <span class="badge">🚀 Personal Project</span>
+    </div>
+    
+    <h1>👋 Halo, saya <span class="name-highlight">Naufal Rakha Putra</span></h1>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 30px 0;">
+      <p style="font-size: 1.3em; margin-bottom: 20px;">Selamat datang di <strong>Personal API Server</strong> saya!</p>
+      
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin: 40px 0;">
+        <div style="background: white; color: #333; padding: 20px; border-radius: 10px; min-width: 200px;">
+          <h3 style="color: #667eea;">📋 Total Todos</h3>
+          <p style="font-size: 2em; font-weight: bold;" id="total-todos">100+</p>
+        </div>
+        <div style="background: white; color: #333; padding: 20px; border-radius: 10px; min-width: 200px;">
+          <h3 style="color: #667eea;">📁 Kategori</h3>
+          <p style="font-size: 2em; font-weight: bold;" id="total-categories">8</p>
+        </div>
+        <div style="background: white; color: #333; padding: 20px; border-radius: 10px; min-width: 200px;">
+          <h3 style="color: #667eea;">⚡ Endpoints</h3>
+          <p style="font-size: 2em; font-weight: bold;" id="total-endpoints">6</p>
+        </div>
+      </div>
+      
+      <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px;">
+        <h3>📌 API Endpoints Tersedia:</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 10px 0;">🔹 <code style="background: #333; padding: 4px 8px; border-radius: 4px;">GET /todos</code> - Lihat semua todos</li>
+          <li style="margin: 10px 0;">🔹 <code style="background: #333; padding: 4px 8px; border-radius: 4px;">GET /todos/:id</code> - Cari todo by ID</li>
+          <li style="margin: 10px 0;">🔹 <code style="background: #333; padding: 4px 8px; border-radius: 4px;">GET /todos/stats/summary</code> - Statistik todos</li>
+          <li style="margin: 10px 0;">🔹 <code style="background: #333; padding: 4px 8px; border-radius: 4px;">GET /todos/meta/categories</code> - Daftar kategori</li>
+          <li style="margin: 10px 0;">🔹 <code style="background: #333; padding: 4px 8px; border-radius: 4px;">GET /todos/meta/priorities</code> - Daftar prioritas</li>
+        </ul>
+      </div>
+      
+      <div style="margin-top: 40px;">
+        <p>Coba langsung akses endpoint pertama:</p>
+        <a href="/todos" style="display: inline-block; background: white; color: #667eea; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 10px;">🚀 GET /todos</a>
+        <a href="/todos/stats/summary" style="display: inline-block; background: transparent; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; margin: 10px;">📊 GET /stats</a>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+      <p>Dibuat dengan ❤️ oleh <strong>Naufal Rakha Putra</strong> | © 2026</p>
+      <p style="font-size: 0.9em; opacity: 0.8;">Express.js • Vercel • Todos API • 100+ Data</p>
+    </div>
+    
+    <img src="/logo.png" alt="Logo" width="120" style="display: block; margin: 30px auto;" />
+    
+    <script>
+      // Fetch data buat nampilin statistik real-time
+      fetch('/todos/stats/summary')
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            document.getElementById('total-todos').textContent = data.data.total;
+            
+            const categories = Object.keys(data.data.by_category).length;
+            document.getElementById('total-categories').textContent = categories;
+          }
+        })
+        .catch(err => console.log('Gagal fetch stats'));
+    </script>
+  </body>
+</html>
   `)
 })
 
