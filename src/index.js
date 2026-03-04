@@ -8,9 +8,7 @@ const __dirname = path.dirname(__filename)
 
 const app = express()
 
-// Path ke todos.json yang ada di folder yang sama dengan index.js
-const todosPath = path.join(__dirname, 'todos.json')
-const todos = JSON.parse(fs.readFileSync(todosPath, 'utf8'))
+const todos = 
 
 // Middleware untuk parsing JSON
 app.use(express.json())
