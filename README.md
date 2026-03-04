@@ -3,7 +3,7 @@
 API RESTful untuk manajemen todos yang dibangun dengan Express.js dan dioptimalkan untuk deployment di Vercel.
 
 **Base URL (Local):** `http://localhost:3000`  
-**Base URL (Production):** `https://https://api-three-self-56.vercel.app/`
+**Base URL (Production):** `https://api-three-self-56.vercel.app/`
 
 ## 📚 Daftar Isi
 - [Endpoint List](#-endpoint-list)
