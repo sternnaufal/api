@@ -1,4 +1,3 @@
-// Data todos FIXED (tidak random)
 const todos = [
   {
     "id": 1,
