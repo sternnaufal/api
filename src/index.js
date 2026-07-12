@@ -431,8 +431,7 @@ app.get('/', (req, res) => {
       <a href="/" class="logo">naufal<span>rakha</span></a>
       <div class="nav-links">
         <a href="/docs">Docs</a>
-        <a href="/todos">Todos</a>
-        <a href="/healthz">Health</a>
+        <a href="/todos">APIs</a>
         <a href="https://github.com/sternnaufal/api" target="_blank">GitHub</a>
       </div>
     </nav>
