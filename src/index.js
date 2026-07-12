@@ -9,8 +9,6 @@ import quotesRouter from './routes/quotes.js'
 import countriesRouter from './routes/countries.js'
 import jokesRouter from './routes/jokes.js'
 import docsRouter from './routes/docs.js'
-import quotesRouter from './routes/quotes.js'
-import countriesRouter from './routes/countries.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
