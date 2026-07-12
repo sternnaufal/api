@@ -2,6 +2,15 @@ import express from 'express'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import todosRouter from './routes/todos.js'
+import usersRouter from './routes/users.js'
+import productsRouter from './routes/products.js'
+import booksRouter from './routes/books.js'
+import quotesRouter from './routes/quotes.js'
+import countriesRouter from './routes/countries.js'
+import jokesRouter from './routes/jokes.js'
+import docsRouter from './routes/docs.js'
+import quotesRouter from './routes/quotes.js'
+import countriesRouter from './routes/countries.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -25,6 +34,15 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // ─── ROUTES ───────────────────────────────────────────────────
 app.use('/todos', todosRouter)
+app.use('/users', usersRouter)
+app.use('/products', productsRouter)
+app.use('/books', booksRouter)
+app.use('/quotes', quotesRouter)
+app.use('/countries', countriesRouter)
+app.use('/jokes', jokesRouter)
+app.use('/docs', docsRouter)
+app.use('/quotes', quotesRouter)
+app.use('/countries', countriesRouter)
 
 app.get('/healthz', (req, res) => {
   res.json({
@@ -32,7 +50,7 @@ app.get('/healthz', (req, res) => {
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
     version: '1.0.0',
-    apis: ['todos']
+    apis: ['todos', 'users', 'products', 'books', 'quotes', 'countries', 'jokes']
   })
 })
 
@@ -57,6 +75,36 @@ app.get('/about', (req, res) => {
   })
 })
 
+// ─── SEO ──────────────────────────────────────────────────────
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain').send(`User-agent: *
+Allow: /
+Sitemap: https://naufalrakha.my.id/sitemap.xml
+`)
+})
+
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://naufalrakha.my.id/</loc><priority>1.0</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/todos</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/users</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/products</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/books</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/quotes</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/countries</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/docs/jokes</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/todos</loc><priority>0.7</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/users</loc><priority>0.7</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/products</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/books</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/quotes</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/countries</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://naufalrakha.my.id/jokes</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
+</urlset>`)
+})
+
 // ─── LANDING PAGE ─────────────────────────────────────────────
 app.get('/', (req, res) => {
   res.type('html').send(`<!DOCTYPE html>
@@ -65,7 +113,46 @@ app.get('/', (req, res) => {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naufal Rakha Putra • API Hub</title>
+  <meta name="description" content="Personal REST API hub by Naufal Rakha — Todos, Users, Products, Books, Quotes, Countries, Jokes. Free, read-only dummy data for learning, prototyping, and frontend testing." />
+  <meta name="keywords" content="api, rest api, todos api, users api, products api, books api, quotes api, indonesia, dummy data, free api, naufal rakha" />
+  <meta name="author" content="Naufal Rakha Putra" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://naufalrakha.my.id" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Naufal Rakha API Hub" />
+  <meta property="og:title" content="Naufal Rakha Putra • API Hub" />
+  <meta property="og:description" content="Personal REST API hub — Todos, Users, Products, Books, Quotes, Countries, Jokes. Free dummy data for learning and frontend testing." />
+  <meta property="og:url" content="https://naufalrakha.my.id" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Naufal Rakha Putra • API Hub" />
+  <meta name="twitter:description" content="Personal REST API hub — Todos, Users, Products, Books, Quotes, Countries, Jokes. Free dummy data for learning and frontend testing." />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Naufal Rakha API Hub",
+    "url": "https://naufalrakha.my.id",
+    "author": {
+      "@type": "Person",
+      "name": "Naufal Rakha Putra",
+      "url": "https://naufalrakha.my.id"
+    },
+    "description": "Personal REST API hub with free dummy data for learning and testing.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://naufalrakha.my.id/docs"
+    }
+  }
+  </script>
+
   <style>
     :root {
       --bg: #0a0a0f;
@@ -345,6 +432,7 @@ app.get('/', (req, res) => {
     <nav>
       <a href="/" class="logo">naufal<span>rakha</span></a>
       <div class="nav-links">
+        <a href="/docs">Docs</a>
         <a href="/todos">Todos</a>
         <a href="/healthz">Health</a>
         <a href="https://github.com/sternnaufal/api" target="_blank">GitHub</a>
@@ -363,11 +451,11 @@ app.get('/', (req, res) => {
 
     <div class="stats">
       <div class="stat">
-        <div class="stat-value" id="stat-apis">2</div>
+        <div class="stat-value" id="stat-apis">7</div>
         <div class="stat-label">Live APIs</div>
       </div>
       <div class="stat">
-        <div class="stat-value" id="stat-endpoints">9</div>
+        <div class="stat-value" id="stat-endpoints">45</div>
         <div class="stat-label">Endpoints</div>
       </div>
       <div class="stat">
@@ -388,83 +476,69 @@ app.get('/', (req, res) => {
         <span class="api-endpoint">/todos</span>
       </a>
 
+      <a href="/users" class="api-card">
+        <div class="api-icon orange">👥</div>
+        <div class="api-info">
+          <div class="api-name">Users</div>
+          <div class="api-desc">53 user Indonesia — profile, role, skill, dan social links</div>
+        </div>
+        <span class="api-endpoint">/users</span>
+      </a>
+
+      <a href="/products" class="api-card">
+        <div class="api-icon pink">🛍️</div>
+        <div class="api-info">
+          <div class="api-name">Products</div>
+          <div class="api-desc">30 produk — filter kategori, harga, rating, dan stock</div>
+        </div>
+        <span class="api-endpoint">/products</span>
+      </a>
+
+      <a href="/books" class="api-card">
+        <div class="api-icon purple">📚</div>
+        <div class="api-info">
+          <div class="api-name">Books</div>
+          <div class="api-desc">25 buku — programming, self-help, fiksi, bisnis, sains</div>
+        </div>
+        <span class="api-endpoint">/books</span>
+      </a>
+
+      <a href="/quotes" class="api-card">
+        <div class="api-icon green">💬</div>
+        <div class="api-info">
+          <div class="api-name">Quotes</div>
+          <div class="api-desc">30 kutipan motivasi, teknologi, cinta, lucu, dan programming</div>
+        </div>
+        <span class="api-endpoint">/quotes</span>
+      </a>
+
+      <a href="/countries" class="api-card">
+        <div class="api-icon cyan">🌍</div>
+        <div class="api-info">
+          <div class="api-name">Countries</div>
+          <div class="api-desc">25 negara — population, capital, currencies, dan languages</div>
+        </div>
+        <span class="api-endpoint">/countries</span>
+      </a>
+
+      <a href="/jokes" class="api-card">
+        <div class="api-icon orange">😂</div>
+        <div class="api-info">
+          <div class="api-name">Jokes</div>
+          <div class="api-desc">25 jokes — programming, puns, dad jokes, lucu Indonesia</div>
+        </div>
+        <span class="api-endpoint">/jokes</span>
+      </a>
+
       <a href="/healthz" class="api-card">
         <div class="api-icon blue">💚</div>
         <div class="api-info">
           <div class="api-name">Health Check</div>
-          <div class="api-desc">Status server, uptime, dan versi API</div>
+          <div class="api-desc">Status server, uptime, versi, dan daftar API live</div>
         </div>
         <span class="api-endpoint">/healthz</span>
       </a>
-    </div>
-
-    <div class="section-title">Coming Soon</div>
-    <div class="api-grid">
-      <div class="api-card coming-soon">
-        <div class="api-icon orange">👥</div>
-        <div class="api-info">
-          <div class="api-name">Users</div>
-          <div class="api-desc">CRUD user data dengan profile, role, dan avatar</div>
-        </div>
-        <span class="api-endpoint">/users</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon purple">📝</div>
-        <div class="api-info">
-          <div class="api-name">Posts</div>
-          <div class="api-desc">Blog posts dengan comments, likes, dan tags</div>
-        </div>
-        <span class="api-endpoint">/posts</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon pink">🛍️</div>
-        <div class="api-info">
-          <div class="api-name">Products</div>
-          <div class="api-desc">E-commerce: products, categories, dan pricing</div>
-        </div>
-        <span class="api-endpoint">/products</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon cyan">🌍</div>
-        <div class="api-info">
-          <div class="api-name">Countries</div>
-          <div class="api-desc">Data negara: population, capital, currencies</div>
-        </div>
-        <span class="api-endpoint">/countries</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon purple">📚</div>
-        <div class="api-info">
-          <div class="api-name">Books</div>
-          <div class="api-desc">Library: books, ratings, dan reviews</div>
-        </div>
-        <span class="api-endpoint">/books</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon green">💬</div>
-        <div class="api-info">
-          <div class="api-name">Quotes</div>
-          <div class="api-desc">Random quotes per kategori dan author</div>
-        </div>
-        <span class="api-endpoint">/quotes</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon orange">🎬</div>
-        <div class="api-info">
-          <div class="api-name">Movies</div>
-          <div class="api-desc">Movie database: ratings, genre, dan cast</div>
-        </div>
-        <span class="api-endpoint">/movies</span>
-      </div>
-      <div class="api-card coming-soon">
-        <div class="api-icon pink">😂</div>
-        <div class="api-info">
-          <div class="api-name">Jokes</div>
-          <div class="api-desc">Random jokes: programming, puns, dad jokes</div>
-        </div>
-        <span class="api-endpoint">/jokes</span>
-      </div>
-    </div>
+    </div> 
 
     <div class="section-title">Quick Start</div>
     <div class="quickstart">
@@ -473,14 +547,17 @@ app.get('/', (req, res) => {
 <span class="comment"># Get all todos</span>
 <span class="url">GET</span> /todos
 
-<span class="comment"># Filter by priority</span>
-<span class="url">GET</span> /todos?priority=Tinggi
+<span class="comment"># Get all users</span>
+<span class="url">GET</span> /users
 
-<span class="comment"># Search todos</span>
-<span class="url">GET</span> /todos?search=belajar
+<span class="comment"># Get products under 100rb</span>
+<span class="url">GET</span> /products?max_price=100000
 
-<span class="comment"># Get statistics</span>
-<span class="url">GET</span> /todos/stats/summary
+<span class="comment"># Get random quote</span>
+<span class="url">GET</span> /quotes/random
+
+<span class="comment"># Get country info</span>
+<span class="url">GET</span> /countries?continent=Asia
 
 <span class="comment"># Health check</span>
 <span class="url">GET</span> /healthz
@@ -513,7 +590,7 @@ app.use((req, res) => {
     success: false,
     message: 'Endpoint not found',
     docs: '/',
-    available: ['/todos', '/healthz', '/about', '/api-data']
+    available: ['/todos', '/users', '/products', '/books', '/quotes', '/countries', '/jokes', '/healthz', '/about', '/api-data', '/docs']
   })
 })
 

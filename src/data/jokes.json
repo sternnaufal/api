@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "text": "Kenapa programmer suka dark mode? Karena light mode punya too many bugs.",
+    "category": "Programming",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "text": "Aku membaca buku tentang anti-gravitasi. Susah buat diletakkan.",
+    "category": "Puns",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "text": "Halo, aku seorang programmer. Aku punya 3 anak. Array satu-satunya yang aku tahu cuma array di JavaScript.",
+    "category": "Coding",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "text": "Kenapa ayam nyebrang jalan? Untuk sampai ke sisi lain. Tapi kenapa ayam itu programmer? Karena dia pake polymorphism.",
+    "category": "Dad Jokes",
+    "rating": 3
+  },
+  {
+    "id": 5,
+    "text": "Rest API lagi begadang. Katanya mau nge-rest.",
+    "category": "Lucu",
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "text": "Kalau ada error di kode, jangan panik. Itu cuma 'undefined' relationship.",
+    "category": "Programming",
+    "rating": 5
+  },
+  {
+    "id": 7,
+    "text": "WiFi-ku lemot. Mungkin lagi diet, soalnya lagi nurunin bandwidth.",
+    "category": "Teknologi",
+    "rating": 4
+  },
+  {
+    "id": 8,
+    "text": "Hacker membobol sistem dan pesan di layar: 'Passwordmu terlalu lemah.' Admin balas: 'Iya, karena aku pake string kosong biar falsy.'",
+    "category": "Coding",
+    "rating": 5
+  },
+  {
+    "id": 9,
+    "text": "Kenapa ilmuwan komputer sering ngadain pesta di Halloween? Karena 31 Oct = 25 Dec.",
+    "category": "Puns",
+    "rating": 3
+  },
+  {
+    "id": 10,
+    "text": "Aku akan memberitahumu sebuah lelucon tentang array. Tapi aku rasa kau belum siap untuk index 0-nya.",
+    "category": "Programming",
+    "rating": 4
+  },
+  {
+    "id": 11,
+    "text": "Ada dua hal yang sulit dalam ilmu komputer: invalidasi cache, penamaan variabel, dan error satu-per-satu.",
+    "category": "Coding",
+    "rating": 5
+  },
+  {
+    "id": 12,
+    "text": "HTML jalan-jalan sambil pegang tangan CSS. Tiba-tiba JavaScript datang dan bilang 'Bro, lo berdua pacaran?' HTML dan CSS cemberut: 'Kita cuma tag dan style doang!'",
+    "category": "Teknologi",
+    "rating": 4
+  },
+  {
+    "id": 13,
+    "text": "Kenapa semut tidak pernah sakit gigi? Karena mereka hidup di alam liar. Tapi kenapa serverku sering sakit? Karena sering kena DDoS.",
+    "category": "Dad Jokes",
+    "rating": 2
+  },
+  {
+    "id": 14,
+    "text": "Aku seorang developer full-stack. Dari depan sampai belakang, semua stackoverflow.",
+    "category": "Programming",
+    "rating": 5
+  },
+  {
+    "id": 15,
+    "text": "Github copilot menulis kode. Terus aku tanya, 'Ini punya lo?' Copilot jawab, 'Copyleft.'",
+    "category": "Lucu",
+    "rating": 4
+  },
+  {
+    "id": 16,
+    "text": "Orang yang pertama kali bilang 'Ini bukan bug, ini feature' pasti seorang programmer yang males ngoding ulang.",
+    "category": "Programming",
+    "rating": 4
+  },
+  {
+    "id": 17,
+    "text": "Aku memberi tahu dokter bahwa aku patah hati. Dia bilang, 'Coba pake JSON.parse, siapa tahu bisa healing.'",
+    "category": "Puns",
+    "rating": 3
+  },
+  {
+    "id": 18,
+    "text": "Database relasi putus cinta. Katanya mereka sudah no SQL.",
+    "category": "Teknologi",
+    "rating": 5
+  },
+  {
+    "id": 19,
+    "text": "Kenapa React developer gampang tersinggung? Karena mereka sensitive terhadap re-render.",
+    "category": "Coding",
+    "rating": 4
+  },
+  {
+    "id": 20,
+    "text": "Ada tiga tipe programmer: yang bisa ngitung dari 0, dan yang enggak.",
+    "category": "Dad Jokes",
+    "rating": 4
+  },
+  {
+    "id": 21,
+    "text": "Kucingku suka duduk di atas keyboard. Mungkin dia mau jadi developer cat-script.",
+    "category": "Lucu",
+    "rating": 3
+  },
+  {
+    "id": 22,
+    "text": "Debugging itu seperti jadi detektif di film kriminal — bedanya kamu adalah kriminalnya juga, karena kamu yang nulis bug-nya.",
+    "category": "Coding",
+    "rating": 5
+  },
+  {
+    "id": 23,
+    "text": "Saya dan Bootstrap punya hubungan yang rumit. Kadang saya col-md, kadang saya col-md-not.",
+    "category": "Teknologi",
+    "rating": 4
+  },
+  {
+    "id": 24,
+    "text": "AJAX: Bukan pembersih lantai, tapi Asynchronous JavaScript and XML. Tapi sama-sama bikin bersih — bersih error.",
+    "category": "Programming",
+    "rating": 4
+  },
+  {
+    "id": 25,
+    "text": "Anak saya bertanya kenapa langit biru. Saya bilang karena scattering Rayleigh. Dia nangis. Mungkin dia expect jawaban yang lebih 'tech support' kayak 'Coba restart mata-mu.'",
+    "category": "Lucu",
+    "rating": 3
+  }
+]

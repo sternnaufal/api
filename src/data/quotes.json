@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "Kesuksesan bukan kunci kebahagiaan. Kebahagiaanlah yang menjadi kunci kesuksesan.",
+    "author": "Albert Schweitzer",
+    "category": "Motivasi"
+  },
+  {
+    "id": 2,
+    "text": "Jangan tunda pekerjaan yang bisa kamu lakukan hari ini sampai besok.",
+    "author": "Pramoedya Ananta Toer",
+    "category": "Motivasi"
+  },
+  {
+    "id": 3,
+    "text": "Kecerdasan buatan adalah listrik baru.",
+    "author": "Andrew Ng",
+    "category": "Teknologi"
+  },
+  {
+    "id": 4,
+    "text": "Kode yang bersih adalah dokumentasi terbaik.",
+    "author": "Steve McConnell",
+    "category": "Teknologi"
+  },
+  {
+    "id": 5,
+    "text": "Hidup itu seperti mengendarai sepeda. Untuk menjaga keseimbangan, kamu harus terus bergerak.",
+    "author": "Albert Einstein",
+    "category": "Kehidupan"
+  },
+  {
+    "id": 6,
+    "text": "Jangan pernah menyerah, karena menyerah adalah awal dari kegagalan.",
+    "author": "Ki Hajar Dewantara",
+    "category": "Motivasi"
+  },
+  {
+    "id": 7,
+    "text": "Cinta itu memberikan kebebasan, bukan mengikat.",
+    "author": "Jiddu Krishnamurti",
+    "category": "Cinta"
+  },
+  {
+    "id": 8,
+    "text": "Sejauh mana kamu mencintai seseorang, sejauh itulah kamu merasakan sakit.",
+    "author": "Rangga Jawira",
+    "category": "Cinta"
+  },
+  {
+    "id": 9,
+    "text": "Programmer itu seperti Ninja: sering lembur, jarang makan, dan selalu menyerang bug di malam hari.",
+    "author": "Anonim",
+    "category": "Lucu"
+  },
+  {
+    "id": 10,
+    "text": "Saya tidak anti sosial, saya hanya programmer.",
+    "author": "Anonim",
+    "category": "Lucu"
+  },
+  {
+    "id": 11,
+    "text": "Premature optimization is the root of all evil.",
+    "author": "Donald Knuth",
+    "category": "Programming"
+  },
+  {
+    "id": 12,
+    "text": "Talk is cheap. Show me the code.",
+    "author": "Linus Torvalds",
+    "category": "Programming"
+  },
+  {
+    "id": 13,
+    "text": "Pendidikan adalah senjata paling ampuh untuk mengubah dunia.",
+    "author": "Nelson Mandela",
+    "category": "Pendidikan"
+  },
+  {
+    "id": 14,
+    "text": "Ilmu itu seperti pohon, akarnya pahit tapi buahnya manis.",
+    "author": "Ali bin Abi Thalib",
+    "category": "Pendidikan"
+  },
+  {
+    "id": 15,
+    "text": "Jadilah perubahan yang ingin kamu lihat di dunia ini.",
+    "author": "Mahatma Gandhi",
+    "category": "Motivasi"
+  },
+  {
+    "id": 16,
+    "text": "Kesalahan itu wajar, yang tidak wajar adalah tidak belajar dari kesalahan.",
+    "author": "Jusuf Kalla",
+    "category": "Kehidupan"
+  },
+  {
+    "id": 17,
+    "text": "Software is eating the world.",
+    "author": "Marc Andreessen",
+    "category": "Teknologi"
+  },
+  {
+    "id": 18,
+    "text": "Ketika kamu mencintai seseorang, kamu mencintai mereka apa adanya, bukan seperti yang kamu inginkan.",
+    "author": "Leo Tolstoy",
+    "category": "Cinta"
+  },
+  {
+    "id": 19,
+    "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "author": "Martin Fowler",
+    "category": "Programming"
+  },
+  {
+    "id": 20,
+    "text": "Bug pertama saya di dunia pemrograman adalah menulis 'hello world' tapi yang tampil 'hello orld'.",
+    "author": "Anonim",
+    "category": "Lucu"
+  },
+  {
+    "id": 21,
+    "text": "Belajar tanpa berpikir itu sia-sia, berpikir tanpa belajar itu berbahaya.",
+    "author": "Confucius",
+    "category": "Pendidikan"
+  },
+  {
+    "id": 22,
+    "text": "Keberanian adalah salah satu sifat paling penting untuk sukses.",
+    "author": "A.A. Milne",
+    "category": "Motivasi"
+  },
+  {
+    "id": 23,
+    "text": "Kebersamaan itu indah, tapi jangan lupa nikmati kesendirianmu juga.",
+    "author": "Sapardi Djoko Damono",
+    "category": "Kehidupan"
+  },
+  {
+    "id": 24,
+    "text": "Technology is best when it brings people together.",
+    "author": "Matt Mullenweg",
+    "category": "Teknologi"
+  },
+  {
+    "id": 25,
+    "text": "Kamu tidak bisa mengendalikan siapa yang kamu cintai, tapi kamu bisa mengendalikan bagaimana kamu mencintai.",
+    "author": "Paulo Coelho",
+    "category": "Cinta"
+  },
+  {
+    "id": 26,
+    "text": "First, solve the problem. Then, write the code.",
+    "author": "John Johnson",
+    "category": "Programming"
+  },
+  {
+    "id": 27,
+    "text": "Orang normal berpikir untuk menambah fitur, programmer berpikir untuk menghapus bug.",
+    "author": "Anonim",
+    "category": "Lucu"
+  },
+  {
+    "id": 28,
+    "text": "Anak-anak harus diberi contoh, bukan nasihat.",
+    "author": "Joseph Joubert",
+    "category": "Pendidikan"
+  },
+  {
+    "id": 29,
+    "text": "Kerja keras mengalahkan bakat ketika bakat tidak bekerja keras.",
+    "author": "Tim Notke",
+    "category": "Motivasi"
+  },
+  {
+    "id": 30,
+    "text": "Jangan mencari orang yang bisa menyelesaikan masalah, tapi cari yang bisa membuatmu bahagia.",
+    "author": "BJ Habibie",
+    "category": "Kehidupan"
+  }
+]
