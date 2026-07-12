@@ -86,7 +86,7 @@ function renderDocs(title, icon, color, baseUrl, description, sections) {
     <a href="/" class="logo">naufal<span>rakha</span></a>
     <div class="nav-links">
       <a href="/docs">Docs</a>
-      <a href="/todos">APIs</a>
+      <a href="/">APIs</a>
       <a href="https://github.com/sternnaufal/api" target="_blank">GitHub</a>
     </div>
   </nav>
@@ -477,7 +477,7 @@ router.get('/', (req, res) => {
     <a href="/" class="logo">naufal<span>rakha</span></a>
     <div class="nav-links">
       <a href="/docs">Docs</a>
-      <a href="/todos">APIs</a>
+      <a href="/">APIs</a>
       <a href="https://github.com/sternnaufal/api" target="_blank">GitHub</a>
     </div>
   </nav>
