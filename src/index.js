@@ -407,11 +407,24 @@ app.get('/', (req, res) => {
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 32px 0;
-      text-align: center;
+      padding: 24px 0 12px;
       color: var(--muted);
       font-size: 0.8rem;
     }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
     footer a {
       color: var(--accent);
       text-decoration: none;
@@ -561,9 +574,77 @@ app.get('/', (req, res) => {
       </div>
     </div>
 
+    <div class="section-title">Jaringan Saya</div>
+    <div class="api-grid" style="margin-bottom:16px">
+      <a href="https://naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon blue">🏠</div>
+        <div class="api-info">
+          <div class="api-name">naufalrakha.my.id</div>
+          <div class="api-desc">Portfolio utama — React SPA</div>
+        </div>
+        <span class="api-endpoint">Main</span>
+      </a>
+      <a href="https://blog.naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon cyan">📝</div>
+        <div class="api-info">
+          <div class="api-name">Penting Literasi</div>
+          <div class="api-desc">Blog artikel — teknologi, bisnis, tips</div>
+        </div>
+        <span class="api-endpoint">blog</span>
+      </a>
+      <a href="https://digital.naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon orange">💼</div>
+        <div class="api-info">
+          <div class="api-name">IT Solutions</div>
+          <div class="api-desc">Jasa web dev, SEO, networking</div>
+        </div>
+        <span class="api-endpoint">digital</span>
+      </a>
+      <a href="https://demo.naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon purple">🎨</div>
+        <div class="api-info">
+          <div class="api-name">Demo Art Style</div>
+          <div class="api-desc">41 landing page art-style demos</div>
+        </div>
+        <span class="api-endpoint">demo</span>
+      </a>
+      <a href="https://webapps.naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon pink">🛠️</div>
+        <div class="api-info">
+          <div class="api-name">WebApps Tools</div>
+          <div class="api-desc">40+ online developer tools</div>
+        </div>
+        <span class="api-endpoint">webapps</span>
+      </a>
+      <a href="https://koleksilama.naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon green">🎮</div>
+        <div class="api-info">
+          <div class="api-name">Koleksi LAMA</div>
+          <div class="api-desc">Retro game ROMs collection</div>
+        </div>
+        <span class="api-endpoint">koleksi</span>
+      </a>
+      <a href="https://github.com/sternnaufal/api" class="api-card" target="_blank" rel="noopener">
+        <div class="api-icon blue">⚡</div>
+        <div class="api-info">
+          <div class="api-name">API Hub</div>
+          <div class="api-desc">Kamu di sini — 7 REST APIs</div>
+        </div>
+        <span class="api-endpoint" style="background:rgba(99,102,241,.2);color:#6366f1">api</span>
+      </a>
+    </div>
+
     <footer>
-      Dibuat dengan ❤️ oleh <a href="https://github.com/sternnaufal">Naufal Rakha Putra</a> &middot; 2026<br/>
-      <span style="opacity:0.6">Express.js &middot; Vercel &middot; REST API</span>
+      <div class="footer-links">
+        <span style="color:var(--muted);font-size:.8rem;margin-right:8px">🌐 Jaringan:</span>
+        <a href="https://naufalrakha.my.id" target="_blank" rel="noopener">naufalrakha.my.id</a>
+        <a href="https://blog.naufalrakha.my.id" target="_blank" rel="noopener">blog</a>
+        <a href="https://digital.naufalrakha.my.id" target="_blank" rel="noopener">digital</a>
+        <a href="https://demo.naufalrakha.my.id" target="_blank" rel="noopener">demo</a>
+        <a href="https://webapps.naufalrakha.my.id" target="_blank" rel="noopener">webapps</a>
+        <a href="https://koleksilama.naufalrakha.my.id" target="_blank" rel="noopener">koleksilama</a>
+      </div>
+      <span style="opacity:0.5">Dibuat oleh <a href="https://github.com/sternnaufal">Naufal Rakha Putra</a> &middot; 2026</span>
     </footer>
   </div>
 
