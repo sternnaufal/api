@@ -642,7 +642,7 @@ app.get('/', (req, res) => {
         <a href="https://digital.naufalrakha.my.id" target="_blank" rel="noopener">digital</a>
         <a href="https://demo.naufalrakha.my.id" target="_blank" rel="noopener">demo</a>
         <a href="https://webapps.naufalrakha.my.id" target="_blank" rel="noopener">webapps</a>
-        <a href="https://koleksilama.naufalrakha.my.id" target="_blank" rel="noopener">koleksilama</a>
+        
       </div>
       <span style="opacity:0.5">Dibuat oleh <a href="https://github.com/sternnaufal">Naufal Rakha Putra</a> &middot; 2026</span>
     </footer>
