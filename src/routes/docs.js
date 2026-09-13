@@ -10,6 +10,12 @@ function renderDocs(title, icon, color, baseUrl, description, sections) {
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${title} Docs • Naufal API Hub</title>
+  <meta name="description" content="${description}">
+  <link rel="canonical" href="${baseUrl}" />
+  <meta property="og:title" content="${title} Docs • Naufal API Hub" />
+  <meta property="og:description" content="${description}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="${baseUrl}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${icon}</text></svg>"/>
   <style>
     :root{--bg:#0a0a0f;--card:#12121a;--card2:#16161f;--border:#1e1e2e;--text:#e4e4e7;--muted:#71717a;--accent:${color};--green:#22c55e;--orange:#f59e0b;--red:#ef4444;--blue:#6366f1}
