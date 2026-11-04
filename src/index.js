@@ -611,7 +611,7 @@ app.get('/', (req, res) => {
         <div class="api-icon purple">🎨</div>
         <div class="api-info">
           <div class="api-name">Demo Art Style</div>
-          <div class="api-desc">41 landing page art-style demos</div>
+          <div class="api-desc">69 landing page art-style demos</div>
         </div>
         <span class="api-endpoint">demo</span>
       </a>
@@ -619,17 +619,9 @@ app.get('/', (req, res) => {
         <div class="api-icon pink">🛠️</div>
         <div class="api-info">
           <div class="api-name">WebApps Tools</div>
-          <div class="api-desc">40+ online developer tools</div>
+          <div class="api-desc">86+ online developer tools</div>
         </div>
         <span class="api-endpoint">webapps</span>
-      </a>
-      <a href="https://koleksilama.naufalrakha.my.id" class="api-card" target="_blank" rel="noopener">
-        <div class="api-icon green">🎮</div>
-        <div class="api-info">
-          <div class="api-name">Koleksi LAMA</div>
-          <div class="api-desc">Retro game ROMs collection</div>
-        </div>
-        <span class="api-endpoint">koleksi</span>
       </a>
       <a href="https://github.com/sternnaufal/api" class="api-card" target="_blank" rel="noopener">
         <div class="api-icon blue">⚡</div>
