@@ -619,7 +619,7 @@ app.get('/', (req, res) => {
         <div class="api-icon pink">🛠️</div>
         <div class="api-info">
           <div class="api-name">WebApps Tools</div>
-          <div class="api-desc">86+ online developer tools</div>
+          <div class="api-desc">100+ online developer tools</div>
         </div>
         <span class="api-endpoint">webapps</span>
       </a>
