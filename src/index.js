@@ -30,6 +30,18 @@ app.use((req, res, next) => {
 // Static files
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
+// Jangan biarkan endpoint JSON/API masuk index mesin pencari.
+app.use((req, res, next) => {
+  const isHtmlPage =
+    req.path === '/' ||
+    req.path === '/about' ||
+    req.path === '/robots.txt' ||
+    req.path === '/sitemap.xml' ||
+    req.path.startsWith('/docs')
+  if (!isHtmlPage) res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  next()
+})
+
 // ─── ROUTES ───────────────────────────────────────────────────
 app.use('/todos', todosRouter)
 app.use('/users', usersRouter)
@@ -77,29 +89,22 @@ app.get('/about', (req, res) => {
 app.get('/robots.txt', (req, res) => {
   res.type('text/plain').send(`User-agent: *
 Allow: /
-Sitemap: https://naufalrakha.my.id/sitemap.xml
+Sitemap: https://api.naufalrakha.my.id/sitemap.xml
 `)
 })
 
 app.get('/sitemap.xml', (req, res) => {
   res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://naufalrakha.my.id/</loc><priority>1.0</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/todos</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/users</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/products</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/books</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/quotes</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/countries</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/docs/jokes</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/todos</loc><priority>0.7</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/users</loc><priority>0.7</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/products</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/books</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/quotes</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/countries</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://naufalrakha.my.id/jokes</loc><priority>0.6</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/todos</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/users</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/products</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/books</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/quotes</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/countries</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://api.naufalrakha.my.id/docs/jokes</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
 </urlset>`)
 })
 
@@ -115,7 +120,9 @@ app.get('/', (req, res) => {
   <meta name="keywords" content="api, rest api, todos api, users api, products api, books api, quotes api, indonesia, dummy data, free api, naufal rakha" />
   <meta name="author" content="Naufal Rakha Putra" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://naufalrakha.my.id" />
+  <link rel="canonical" href="https://api.naufalrakha.my.id/" />
+  <meta property="og:image" content="https://api.naufalrakha.my.id/logo.png" />
+  <meta name="twitter:image" content="https://api.naufalrakha.my.id/logo.png" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
   <!-- Open Graph -->
@@ -123,7 +130,7 @@ app.get('/', (req, res) => {
   <meta property="og:site_name" content="Naufal Rakha API Hub" />
   <meta property="og:title" content="Naufal Rakha Putra • API Hub" />
   <meta property="og:description" content="Personal REST API hub — Todos, Users, Products, Books, Quotes, Countries, Jokes. Free dummy data for learning and frontend testing." />
-  <meta property="og:url" content="https://naufalrakha.my.id" />
+  <meta property="og:url" content="https://api.naufalrakha.my.id/" />
   <meta property="og:locale" content="id_ID" />
 
   <!-- Twitter Card -->
@@ -137,16 +144,16 @@ app.get('/', (req, res) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Naufal Rakha API Hub",
-    "url": "https://naufalrakha.my.id",
+    "url": "https://api.naufalrakha.my.id/",
     "author": {
       "@type": "Person",
       "name": "Naufal Rakha Putra",
-      "url": "https://naufalrakha.my.id"
+      "url": "https://www.naufalrakha.my.id/"
     },
     "description": "Personal REST API hub with free dummy data for learning and testing.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://naufalrakha.my.id/docs"
+      "target": "https://api.naufalrakha.my.id/docs"
     }
   }
   </script>

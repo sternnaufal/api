@@ -11,11 +11,12 @@ function renderDocs(title, icon, color, baseUrl, description, sections) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${title} Docs • Naufal API Hub</title>
   <meta name="description" content="${description}">
-  <link rel="canonical" href="${baseUrl}" />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://api.naufalrakha.my.id${baseUrl}" />
   <meta property="og:title" content="${title} Docs • Naufal API Hub" />
   <meta property="og:description" content="${description}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="${baseUrl}" />
+  <meta property="og:url" content="https://api.naufalrakha.my.id${baseUrl}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${icon}</text></svg>"/>
   <style>
     :root{--bg:#0a0a0f;--card:#12121a;--card2:#16161f;--border:#1e1e2e;--text:#e4e4e7;--muted:#71717a;--accent:${color};--green:#22c55e;--orange:#f59e0b;--red:#ef4444;--blue:#6366f1}
@@ -113,7 +114,7 @@ function renderDocs(title, icon, color, baseUrl, description, sections) {
 
 // ─── /docs/todos ───────────────────────────────────────────────
 router.get('/todos', (req, res) => {
-  const baseUrl = ''
+  const baseUrl = '/docs/todos'
   const sections = [
     // Stats overview
     `<div class="section">
@@ -259,7 +260,7 @@ router.get('/todos', (req, res) => {
     </div>`
   ]
 
-  res.type('html').send(renderDocs('Todos', '📋', '#22c55e', '/todos',
+  res.type('html').send(renderDocs('Todos', '📋', '#22c55e', '/docs/todos',
     '100 todos Indonesia dengan filter, search, pagination, dan statistik.', sections))
 })
 
@@ -290,7 +291,7 @@ router.get('/users', (req, res) => {
       <div class="endpoint"><div class="ep-header"><span class="ep-method get">GET</span><span class="ep-path">/users/meta/locations</span></div><div class="ep-desc">Semua lokasi unik.</div></div>
     </div>`
   ]
-  res.type('html').send(renderDocs('Users', '👥', '#f59e0b', '/users', '53 user Indonesia — profile, role, skill, dan social links.', sections))
+  res.type('html').send(renderDocs('Users', '👥', '#f59e0b', '/docs/users', '53 user Indonesia — profile, role, skill, dan social links.', sections))
 })
 
 // ─── /docs/products ──────────────────────────────────────────
@@ -319,7 +320,7 @@ router.get('/products', (req, res) => {
       <div class="endpoint"><div class="ep-header"><span class="ep-method get">GET</span><span class="ep-path">/products/:id</span></div><div class="ep-desc">Detail produk by ID.</div></div>
     </div>`
   ]
-  res.type('html').send(renderDocs('Products', '🛍️', '#ec4899', '/products', '30 produk dengan filter harga, rating, kategori, dan stock.', sections))
+  res.type('html').send(renderDocs('Products', '🛍️', '#ec4899', '/docs/products', '30 produk dengan filter harga, rating, kategori, dan stock.', sections))
 })
 
 // ─── /docs/books ─────────────────────────────────────────────
@@ -349,7 +350,7 @@ router.get('/books', (req, res) => {
       <div class="endpoint"><div class="ep-header"><span class="ep-method get">GET</span><span class="ep-path">/books/:id</span></div><div class="ep-desc">Detail buku by ID.</div></div>
     </div>`
   ]
-  res.type('html').send(renderDocs('Books', '📚', '#a855f7', '/books', '25 buku — programming, self-help, fiksi, bisnis, sains.', sections))
+  res.type('html').send(renderDocs('Books', '📚', '#a855f7', '/docs/books', '25 buku — programming, self-help, fiksi, bisnis, sains.', sections))
 })
 
 // ─── /docs/quotes ────────────────────────────────────────────
@@ -379,7 +380,7 @@ router.get('/quotes', (req, res) => {
       <div class="endpoint"><div class="ep-header"><span class="ep-method get">GET</span><span class="ep-path">/quotes/:id</span></div><div class="ep-desc">Detail quote by ID.</div></div>
     </div>`
   ]
-  res.type('html').send(renderDocs('Quotes', '💬', '#22c55e', '/quotes', '30 kutipan — motivasi, teknologi, cinta, lucu, programming.', sections))
+  res.type('html').send(renderDocs('Quotes', '💬', '#22c55e', '/docs/quotes', '30 kutipan — motivasi, teknologi, cinta, lucu, programming.', sections))
 })
 
 // ─── /docs/countries ─────────────────────────────────────────
@@ -407,7 +408,7 @@ router.get('/countries', (req, res) => {
       <div class="endpoint"><div class="ep-header"><span class="ep-method get">GET</span><span class="ep-path">/countries/:id</span></div><div class="ep-desc">Detail negara by ID.</div></div>
     </div>`
   ]
-  res.type('html').send(renderDocs('Countries', '🌍', '#06b6d4', '/countries', '25 negara — population, capital, currencies, languages.', sections))
+  res.type('html').send(renderDocs('Countries', '🌍', '#06b6d4', '/docs/countries', '25 negara — population, capital, currencies, languages.', sections))
 })
 
 // ─── /docs/jokes ─────────────────────────────────────────────
@@ -435,7 +436,7 @@ router.get('/jokes', (req, res) => {
       <div class="endpoint"><div class="ep-header"><span class="ep-method get">GET</span><span class="ep-path">/jokes/:id</span></div><div class="ep-desc">Detail joke by ID.</div></div>
     </div>`
   ]
-  res.type('html').send(renderDocs('Jokes', '😂', '#f59e0b', '/jokes', '25 jokes — programming, puns, dad jokes, lucu Indonesia.', sections))
+  res.type('html').send(renderDocs('Jokes', '😂', '#f59e0b', '/docs/jokes', '25 jokes — programming, puns, dad jokes, lucu Indonesia.', sections))
 })
 
 // ─── Docs index ────────────────────────────────────────────────
